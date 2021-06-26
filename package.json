@@ -1,0 +1,26 @@
+{
+  "name": "social-network",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yonatanhaddish/social-network.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yonatanhaddish/social-network/issues"
+  },
+  "homepage": "https://github.com/yonatanhaddish/social-network#readme",
+  "dependencies": {
+    "cross-fetch": "^3.1.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.15",
+    "node-fetch": "^2.6.1"
+  }
+}
