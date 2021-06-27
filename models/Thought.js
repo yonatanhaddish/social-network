@@ -1,4 +1,5 @@
 const { Schema, model, Types}= require('mongoose');
+const dateFormat= require('../utils/dateFormat');
 
 const ReactionSchema= new Schema({
     reactionId: {
@@ -7,7 +8,9 @@ const ReactionSchema= new Schema({
     },
     reactionBody: {
         type: String,
-        required: 'You need to provide a reaction!'
+        required: 'You need to provide a reaction!',
+        minlength: 1,
+        maxlength: 280
     },
     username: {
         type: String,
@@ -15,11 +18,13 @@ const ReactionSchema= new Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: createdAtVal => dateFormat(createdAtVal)
     }
 },
 {
     toJSON: {
+        virtuals: true,
         getters: true
     }
 }
@@ -28,11 +33,14 @@ const ReactionSchema= new Schema({
 const ThoughtSchema= new Schema({
     thoughtText: {
         type: String,
-        required: 'You need to provide a thought!'
+        required: 'You need to provide a thought!',
+        minlength: 1,
+        maxlength: 280
     },
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: createdAt => dateFormat(createdAt)
     },
     username: {
         type: String,
