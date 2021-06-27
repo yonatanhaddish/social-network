@@ -1,6 +1,7 @@
 const { User }= require('../models');
 
 const userController= {
+    // getting all users
     getAllUser(req, res) {
         User.find( {} )
             .populate({
@@ -15,6 +16,7 @@ const userController= {
                 res.status(400).json(err);
             });
     },
+    // getting a specific user by an Id
     getUserById({params}, res) {
         User.findOne({_id: params.id})
             .populate({
@@ -34,11 +36,13 @@ const userController= {
                 res.status(400).json(err);
             });
     },
+    // creating a new user
     createUser( {body}, res) {
         User.create(body)
         .then(dbUserData => res.json(dbUserData))
         .catch(err => res.status(400).json(err));
     },
+    // updating a specific existing user by an Id
     updateUser({params, body}, res) {
         User.findByIdAndUpdate({_id: params.id}, body, {new: true, runValidators: true})
             .then(dbUserData => {
@@ -50,6 +54,7 @@ const userController= {
             })
             .catch(err => res.status(400).json(err));
     },
+    // deleting a specific user by an Id
     deleteUser({params}, res) {
         User.findOneAndDelete({_id: params.id})
             .then(dbUserData => {

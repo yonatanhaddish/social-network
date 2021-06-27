@@ -1,4 +1,4 @@
-const { Schema, model}= require('mongoose');
+const { Schema, model, Types}= require('mongoose');
 
 const UserSchema= new Schema(
     {
@@ -13,7 +13,7 @@ const UserSchema= new Schema(
             required: 'You need to provide a valid email!',
             unique: true
         },
-        thought: [
+        thoughts: [
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Thought'
