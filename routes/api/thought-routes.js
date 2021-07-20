@@ -8,17 +8,17 @@ router
 
 router
     .route('/:id')
-    .delete(removeThought)
-    .put(updateThought)
     .post(addThought);
 
 router
     .route('/:thoughtId')
-    .get(getThoughtById)
-    .post(addReaction);
+    .delete(removeThought)
+    .put(updateThought)
+    .get(getThoughtById);
 
 router
     .route('/:thoughtId/:reactionId')
-    .delete(removeReaction);
+    .delete(removeReaction)
+    .post(addReaction);
 
 module.exports= router;
