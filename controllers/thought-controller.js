@@ -24,15 +24,15 @@ const thoughtController= {
     addReaction({params, body}, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId},
-            { $push: {replies: body}},
+            { $push: {reactions: body}},
             { new: true, runValidators: true}
         )
-        .then(dbUserData => {
-            if (!dbUserData) {
+        .then(dbThoughtData => {
+            if (!dbThoughtData) {
                 res.status(404).json({message: 'No user found with this id!'})
                 return;
             }
-            res.json(dbUserData);
+            res.json(dbThoughtData);
         })
         .catch(err => res.json(err));
     },
@@ -65,11 +65,11 @@ const thoughtController= {
             { $pull: { reactions: { reactionId: params.reactionId}}},
             { new: true, runValidators: true}
         )
-        .then(dbUserData => res.json(dbUserData))
+        .then(dbThoughtData => res.json(dbThoughtData))
         .catch(err => res.json(err));
     },
     getAllThought(req, res) {
-        User.find( {} )
+        Thought.find( {} )
             .populate({
                 path: 'user',
                 select: '-__v'
@@ -79,7 +79,7 @@ const thoughtController= {
             .then(dbThoughtData => res.json(dbThoughtData))
             .catch(err => {
                 console.log(err);
-                res.status(400).json(err);
+                res.status(500).json(err);
             });
     },
     getThoughtById({params}, res) {

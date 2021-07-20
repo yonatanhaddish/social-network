@@ -11,10 +11,10 @@ router
     .route('/:id')
     .get(getThoughtById)
     .delete(removeThought)
-    .put(updateThought);
+    // .put(updateThought);
 
 router
-    .route('/:thoughtId/reactions')
+    .route('/:thoughtId')
     .post(addReaction);
 
 router
