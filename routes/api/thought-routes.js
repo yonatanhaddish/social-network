@@ -4,17 +4,17 @@ const { addThought, addReaction, removeThought, removeReaction, getAllThought, g
 
 router
     .route('/')
-    .get(getAllThought)
-    .post(addThought);
+    .get(getAllThought);
 
 router
     .route('/:id')
-    .get(getThoughtById)
     .delete(removeThought)
-    // .put(updateThought);
+    .put(updateThought)
+    .post(addThought);
 
 router
     .route('/:thoughtId')
+    .get(getThoughtById)
     .post(addReaction);
 
 router

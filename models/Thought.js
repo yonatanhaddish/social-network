@@ -8,13 +8,13 @@ const ReactionSchema= new Schema({
     },
     reactionBody: {
         type: String,
-        required: 'You need to provide a reaction!',
+        // required: 'You need to provide a reaction!',
         minlength: 1,
         maxlength: 280
     },
     username: {
         type: String,
-        required: 'You need to provide a username!'
+        // required: 'You need to provide a username!'
     },
     createdAt: {
         type: Date,
