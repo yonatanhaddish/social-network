@@ -9,22 +9,24 @@ I WANT an API for my social network that uses a NoSQL database
 SO THAT my website can handle large amounts of unstructured data
 
 ## END POINTS
-* Get all users
-* Create a user
-* Get user by Id
-* Update user
-* Delete user
-* Get all thoughts
-* Create a thought 
-* Get thought by an Id
-* Adding a reaction
+* Create a user, Get all users, Get user by a specific id, update user and delete a user
+ * Create a thought, Get all thoughts,get a thought by a specific id, update and delete a thought
+* Adding a reaction, delete a reaction
 
-## PACKAGES
+## TECHNOLOGY USED
 * Express
 * Mongoose
+* Javascript
+* Node
 
-## REAMINING
-* Update a thought
-* Delete a thought
-* Deleta a reaction
-* Update a reaction
+## Walkthrough Video
+* https://drive.google.com/file/d/1viPyBEV6gFKUF-UOg_2g2nJ34EZopJZ-/view
+
+* https://drive.google.com/file/d/1wedaddppKuoHVMPngyFeGz3PmJWPS7y8/view
+
+* https://drive.google.com/file/d/1gTglOrfb5Qw-xFSLbKtFEyDFCz_DdfpE/view
+
+* https://drive.google.com/file/d/1VoKzhQqi7RbbKaZQgtXgkr9cSYlyVJ3S/view
+
+# Github
+* https://github.com/yonatanhaddish/social-network
